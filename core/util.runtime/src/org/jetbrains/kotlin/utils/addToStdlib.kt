@@ -132,6 +132,16 @@ inline fun <T> measureTimeMillisWithResult(block: () -> T) : Pair<Long, T> {
     return Pair(System.currentTimeMillis() - start, result)
 }
 
+@Suppress("unused")
+inline fun <T> measureTimeMillisWithResult(action: (Long) -> Unit, block: () -> T): T {
+    val start = System.currentTimeMillis()
+    try {
+        return block()
+    } finally {
+        action(System.currentTimeMillis() - start)
+    }
+}
+
 fun <T, C : MutableCollection<in T>> Iterable<Iterable<T>>.flattenTo(c: C): C {
     for (element in this) {
         c.addAll(element)
