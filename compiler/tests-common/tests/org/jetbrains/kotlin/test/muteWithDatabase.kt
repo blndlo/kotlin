@@ -75,6 +75,10 @@ private class MutedTest(
         simpleClassName = classNameKey.substringAfterLast(".")
     }
 
+    override fun toString(): String {
+        return "Mute($key, $issue, $hasFailFile)"
+    }
+
     companion object {
         fun String.substringAfterWithDelimiter(delimiter: String, missingDelimiterValue: String = this): String {
             val index = indexOf(delimiter)
@@ -89,6 +93,24 @@ private class MutedSet(muted: List<MutedTest>) {
         muted
             .groupBy { it.methodKey } // Method key -> List of muted tests
             .mapValues { (_, tests) -> tests.groupBy { it.simpleClassName } }
+
+    init {
+        val groups: List<List<MutedTest>> = cache.values.flatMap { it.values }
+        for (group in groups) {
+            for (test in group) {
+                checkRedeclaration(test, group)
+            }
+        }
+    }
+
+    private fun checkRedeclaration(test: MutedTest, group: List<MutedTest>) {
+        for (mutedTestOther in group) {
+            if (test === mutedTestOther) continue
+            if (mutedTestOther.classNameKey.endsWith(test.classNameKey)) {
+                throw IllegalArgumentException("Redeclartion:\n$test\n$mutedTestOther")
+            }
+        }
+    }
 
     fun mutedTest(testClass: Class<*>, methodKey: String): MutedTest? {
         val mutedTests = cache[methodKey]?.get(testClass.simpleName) ?: return null
