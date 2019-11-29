@@ -16,10 +16,12 @@
 
 package org.jetbrains.kotlin.idea.test;
 
+import com.intellij.facet.ModifiableFacetModel;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleTypeId;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.roots.ContentEntry;
+import com.intellij.openapi.roots.ModifiableModelsProvider;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.testFramework.LightProjectDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -44,8 +46,12 @@ public class KotlinLightProjectDescriptor extends LightProjectDescriptor {
     @Override
     public void configureModule(@NotNull Module module, @NotNull ModifiableRootModel model, @NotNull ContentEntry contentEntry) {
         configureModule(module, model);
+
+        ModifiableFacetModel facetModel = ModifiableModelsProvider.SERVICE.getInstance().getFacetModifiableModel(module);
+        facetModel.addListener(() -> {
+            throw new IllegalStateException("Create separate project descriptor if facet modification is needed");
+        }, module);
     }
 
-    public void configureModule(@NotNull Module module, @NotNull ModifiableRootModel model) {
-    }
+    public void configureModule(@NotNull Module module, @NotNull ModifiableRootModel model) {}
 }
