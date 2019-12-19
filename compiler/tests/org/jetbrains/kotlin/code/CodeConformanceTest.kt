@@ -52,6 +52,7 @@ class CodeConformanceTest : TestCase() {
             "libraries/tools/kotlin-test-nodejs-runner/.gradle",
             "libraries/tools/kotlin-test-nodejs-runner/node_modules",
             "libraries/tools/kotlinp/src",
+            "kotlin-ultimate/ide/common-cidr-native",
             "out"
         ).map(::File)
 
