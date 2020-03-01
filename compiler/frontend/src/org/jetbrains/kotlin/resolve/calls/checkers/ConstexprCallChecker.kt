@@ -22,6 +22,7 @@ object ConstexprCallChecker : CallChecker {
     private val compileTimeAnnotationName = FqName("kotlin.CompileTimeCalculation")
 
     override fun check(resolvedCall: ResolvedCall<*>, reportOn: PsiElement, context: CallCheckerContext) {
+        if (!context.languageVersionSettings.supportsFeature(LanguageFeature.CompileTimeCalculations)) return
         if (resolvedCall.call.callElement is KtAnnotationEntry || resolvedCall.candidateDescriptor.isAnnotationConstructor()) return
         if (hasEnclosingIntrinsicDeclaration(context)) return
 
