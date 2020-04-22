@@ -18,6 +18,7 @@ import kotlin.random.Random
  * @sample samples.collections.Sequences.Building.sequenceFromIterator
  */
 @kotlin.internal.InlineOnly
+@CompileTimeCalculation
 public inline fun <T> Sequence(crossinline iterator: () -> Iterator<T>): Sequence<T> = object : Sequence<T> {
     override fun iterator(): Iterator<T> = iterator()
 }
@@ -27,6 +28,7 @@ public inline fun <T> Sequence(crossinline iterator: () -> Iterator<T>): Sequenc
  *
  * @sample samples.collections.Sequences.Building.sequenceFromIterator
  */
+@CompileTimeCalculation
 public fun <T> Iterator<T>.asSequence(): Sequence<T> = Sequence { this }.constrainOnce()
 
 /**
@@ -34,13 +36,16 @@ public fun <T> Iterator<T>.asSequence(): Sequence<T> = Sequence { this }.constra
  *
  * @sample samples.collections.Sequences.Building.sequenceOfValues
  */
+@CompileTimeCalculation
 public fun <T> sequenceOf(vararg elements: T): Sequence<T> = if (elements.isEmpty()) emptySequence() else elements.asSequence()
 
 /**
  * Returns an empty sequence.
  */
+@CompileTimeCalculation
 public fun <T> emptySequence(): Sequence<T> = EmptySequence
 
+@CompileTimeCalculation
 private object EmptySequence : Sequence<Nothing>, DropTakeSequence<Nothing> {
     override fun iterator(): Iterator<Nothing> = EmptyIterator
     override fun drop(n: Int) = EmptySequence
@@ -53,6 +58,7 @@ private object EmptySequence : Sequence<Nothing>, DropTakeSequence<Nothing> {
  */
 @SinceKotlin("1.3")
 @kotlin.internal.InlineOnly
+@CompileTimeCalculation
 public inline fun <T> Sequence<T>?.orEmpty(): Sequence<T> = this ?: emptySequence()
 
 
@@ -77,6 +83,7 @@ public fun <T> Sequence<T>.ifEmpty(defaultValue: () -> Sequence<T>): Sequence<T>
  *
  * The operation is _intermediate_ and _stateless_.
  */
+@CompileTimeCalculation
 public fun <T> Sequence<Sequence<T>>.flatten(): Sequence<T> = flatten { it.iterator() }
 
 /**
@@ -84,9 +91,11 @@ public fun <T> Sequence<Sequence<T>>.flatten(): Sequence<T> = flatten { it.itera
  *
  * The operation is _intermediate_ and _stateless_.
  */
+@CompileTimeCalculation
 @kotlin.jvm.JvmName("flattenSequenceOfIterable")
 public fun <T> Sequence<Iterable<T>>.flatten(): Sequence<T> = flatten { it.iterator() }
 
+@CompileTimeCalculation
 private fun <T, R> Sequence<T>.flatten(iterator: (T) -> Iterator<R>): Sequence<R> {
     if (this is TransformingSequence<*, *>) {
         return (this as TransformingSequence<*, T>).flatten(iterator)
@@ -148,6 +157,7 @@ public fun <T> Sequence<T>.shuffled(random: Random): Sequence<T> = sequence<T> {
  * @param sendWhen If `true`, values for which the predicate returns `true` are returned. Otherwise,
  * values for which the predicate returns `false` are returned
  */
+@CompileTimeCalculation
 internal class FilteringSequence<T>(
     private val sequence: Sequence<T>,
     private val sendWhen: Boolean = true,
@@ -196,6 +206,7 @@ internal class FilteringSequence<T>(
  * in the underlying [sequence].
  */
 
+@CompileTimeCalculation
 internal class TransformingSequence<T, R>
 constructor(private val sequence: Sequence<T>, private val transformer: (T) -> R) : Sequence<R> {
     override fun iterator(): Iterator<R> = object : Iterator<R> {
@@ -219,6 +230,7 @@ constructor(private val sequence: Sequence<T>, private val transformer: (T) -> R
  * in the underlying [sequence], where the transformer function takes the index of the value in the underlying
  * sequence along with the value itself.
  */
+@CompileTimeCalculation
 internal class TransformingIndexedSequence<T, R>
 constructor(private val sequence: Sequence<T>, private val transformer: (Int, T) -> R) : Sequence<R> {
     override fun iterator(): Iterator<R> = object : Iterator<R> {
@@ -238,6 +250,7 @@ constructor(private val sequence: Sequence<T>, private val transformer: (Int, T)
  * A sequence which combines values from the underlying [sequence] with their indices and returns them as
  * [IndexedValue] objects.
  */
+@CompileTimeCalculation
 internal class IndexingSequence<T>
 constructor(private val sequence: Sequence<T>) : Sequence<IndexedValue<T>> {
     override fun iterator(): Iterator<IndexedValue<T>> = object : Iterator<IndexedValue<T>> {
@@ -258,6 +271,7 @@ constructor(private val sequence: Sequence<T>) : Sequence<IndexedValue<T>> {
  * [transform] function and returns the values returned by that function. The sequence stops returning
  * values as soon as one of the underlying sequences stops returning values.
  */
+@CompileTimeCalculation
 internal class MergingSequence<T1, T2, V>
 constructor(
     private val sequence1: Sequence<T1>,
@@ -277,6 +291,7 @@ constructor(
     }
 }
 
+@CompileTimeCalculation
 internal class FlatteningSequence<T, R, E>
 constructor(
     private val sequence: Sequence<T>,
@@ -330,6 +345,7 @@ internal fun <T, C, R> flatMapIndexed(source: Sequence<T>, transform: (Int, T) -
 /**
  * A sequence that supports drop(n) and take(n) operations
  */
+@CompileTimeCalculation
 internal interface DropTakeSequence<T> : Sequence<T> {
     fun drop(n: Int): Sequence<T>
     fun take(n: Int): Sequence<T>
@@ -339,6 +355,7 @@ internal interface DropTakeSequence<T> : Sequence<T> {
  * A sequence that skips [startIndex] values from the underlying [sequence]
  * and stops returning values right before [endIndex], i.e. stops at `endIndex - 1`
  */
+@CompileTimeCalculation
 internal class SubSequence<T>(
     private val sequence: Sequence<T>,
     private val startIndex: Int,
@@ -388,6 +405,7 @@ internal class SubSequence<T>(
  * A sequence that returns at most [count] values from the underlying [sequence], and stops returning values
  * as soon as that count is reached.
  */
+@CompileTimeCalculation
 internal class TakeSequence<T>(
     private val sequence: Sequence<T>,
     private val count: Int
@@ -421,6 +439,7 @@ internal class TakeSequence<T>(
  * A sequence that returns values from the underlying [sequence] while the [predicate] function returns
  * `true`, and stops returning values once the function returns `false` for the next element.
  */
+@CompileTimeCalculation
 internal class TakeWhileSequence<T>
 constructor(
     private val sequence: Sequence<T>,
@@ -469,6 +488,7 @@ constructor(
  * A sequence that skips the specified number of values from the underlying [sequence] and returns
  * all values after that.
  */
+@CompileTimeCalculation
 internal class DropSequence<T>(
     private val sequence: Sequence<T>,
     private val count: Int
@@ -508,6 +528,7 @@ internal class DropSequence<T>(
  * A sequence that skips the values from the underlying [sequence] while the given [predicate] returns `true` and returns
  * all values after that.
  */
+@CompileTimeCalculation
 internal class DropWhileSequence<T>
 constructor(
     private val sequence: Sequence<T>,
@@ -576,6 +597,7 @@ private class DistinctIterator<T, K>(private val source: Iterator<T>, private va
 }
 
 
+@CompileTimeCalculation
 private class GeneratorSequence<T : Any>(private val getInitialValue: () -> T?, private val getNextValue: (T) -> T?) : Sequence<T> {
     override fun iterator(): Iterator<T> = object : Iterator<T> {
         var nextItem: T? = null
@@ -614,6 +636,7 @@ private class GeneratorSequence<T : Any>(private val getInitialValue: () -> T?, 
  * [IllegalStateException] is thrown on iterating the returned sequence from the second time.
  *
  */
+@CompileTimeCalculation
 public fun <T> Sequence<T>.constrainOnce(): Sequence<T> {
     // as? does not work in js
     //return this as? ConstrainedOnceSequence<T> ?: ConstrainedOnceSequence(this)
@@ -631,6 +654,7 @@ public fun <T> Sequence<T>.constrainOnce(): Sequence<T> {
  *
  * @sample samples.collections.Sequences.Building.generateSequence
  */
+@CompileTimeCalculation
 public fun <T : Any> generateSequence(nextFunction: () -> T?): Sequence<T> {
     return GeneratorSequence(nextFunction, { nextFunction() }).constrainOnce()
 }
@@ -648,6 +672,7 @@ public fun <T : Any> generateSequence(nextFunction: () -> T?): Sequence<T> {
  *
  * @sample samples.collections.Sequences.Building.generateSequenceWithSeed
  */
+@CompileTimeCalculation
 @kotlin.internal.LowPriorityInOverloadResolution
 public fun <T : Any> generateSequence(seed: T?, nextFunction: (T) -> T?): Sequence<T> =
     if (seed == null)
@@ -668,6 +693,7 @@ public fun <T : Any> generateSequence(seed: T?, nextFunction: (T) -> T?): Sequen
  *
  * @sample samples.collections.Sequences.Building.generateSequenceWithLazySeed
  */
+@CompileTimeCalculation
 public fun <T : Any> generateSequence(seedFunction: () -> T?, nextFunction: (T) -> T?): Sequence<T> =
     GeneratorSequence(seedFunction, nextFunction)
 
