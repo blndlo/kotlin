@@ -3850,6 +3850,7 @@ public fun UShortArray.fill(element: UShort, fromIndex: Int = 0, toIndex: Int = 
  * Returns the range of valid indices for the array.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public inline val UIntArray.indices: IntRange
     get() = storage.indices
@@ -3858,6 +3859,7 @@ public inline val UIntArray.indices: IntRange
  * Returns the range of valid indices for the array.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public inline val ULongArray.indices: IntRange
     get() = storage.indices
@@ -3866,6 +3868,7 @@ public inline val ULongArray.indices: IntRange
  * Returns the range of valid indices for the array.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public inline val UByteArray.indices: IntRange
     get() = storage.indices
@@ -3874,6 +3877,7 @@ public inline val UByteArray.indices: IntRange
  * Returns the range of valid indices for the array.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public inline val UShortArray.indices: IntRange
     get() = storage.indices
@@ -3882,6 +3886,7 @@ public inline val UShortArray.indices: IntRange
  * Returns the last valid index for the array.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public inline val UIntArray.lastIndex: Int
     get() = storage.lastIndex
@@ -3890,6 +3895,7 @@ public inline val UIntArray.lastIndex: Int
  * Returns the last valid index for the array.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public inline val ULongArray.lastIndex: Int
     get() = storage.lastIndex
@@ -3898,6 +3904,7 @@ public inline val ULongArray.lastIndex: Int
  * Returns the last valid index for the array.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public inline val UByteArray.lastIndex: Int
     get() = storage.lastIndex
@@ -3906,6 +3913,7 @@ public inline val UByteArray.lastIndex: Int
  * Returns the last valid index for the array.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public inline val UShortArray.lastIndex: Int
     get() = storage.lastIndex
