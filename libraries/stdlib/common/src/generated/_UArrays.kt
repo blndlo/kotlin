@@ -1614,6 +1614,7 @@ public inline fun UShortArray.singleOrNull(predicate: (UShort) -> Boolean): USho
  * @sample samples.collections.Collections.Transformations.drop
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UIntArray.drop(n: Int): List<UInt> {
     require(n >= 0) { "Requested element count $n is less than zero." }
@@ -1628,6 +1629,7 @@ public fun UIntArray.drop(n: Int): List<UInt> {
  * @sample samples.collections.Collections.Transformations.drop
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun ULongArray.drop(n: Int): List<ULong> {
     require(n >= 0) { "Requested element count $n is less than zero." }
@@ -1642,6 +1644,7 @@ public fun ULongArray.drop(n: Int): List<ULong> {
  * @sample samples.collections.Collections.Transformations.drop
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UByteArray.drop(n: Int): List<UByte> {
     require(n >= 0) { "Requested element count $n is less than zero." }
@@ -1656,6 +1659,7 @@ public fun UByteArray.drop(n: Int): List<UByte> {
  * @sample samples.collections.Collections.Transformations.drop
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UShortArray.drop(n: Int): List<UShort> {
     require(n >= 0) { "Requested element count $n is less than zero." }
@@ -1670,6 +1674,7 @@ public fun UShortArray.drop(n: Int): List<UShort> {
  * @sample samples.collections.Collections.Transformations.drop
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UIntArray.dropLast(n: Int): List<UInt> {
     require(n >= 0) { "Requested element count $n is less than zero." }
@@ -1684,6 +1689,7 @@ public fun UIntArray.dropLast(n: Int): List<UInt> {
  * @sample samples.collections.Collections.Transformations.drop
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun ULongArray.dropLast(n: Int): List<ULong> {
     require(n >= 0) { "Requested element count $n is less than zero." }
@@ -1698,6 +1704,7 @@ public fun ULongArray.dropLast(n: Int): List<ULong> {
  * @sample samples.collections.Collections.Transformations.drop
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UByteArray.dropLast(n: Int): List<UByte> {
     require(n >= 0) { "Requested element count $n is less than zero." }
@@ -1712,6 +1719,7 @@ public fun UByteArray.dropLast(n: Int): List<UByte> {
  * @sample samples.collections.Collections.Transformations.drop
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UShortArray.dropLast(n: Int): List<UShort> {
     require(n >= 0) { "Requested element count $n is less than zero." }
@@ -1724,6 +1732,7 @@ public fun UShortArray.dropLast(n: Int): List<UShort> {
  * @sample samples.collections.Collections.Transformations.drop
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.dropLastWhile(predicate: (UInt) -> Boolean): List<UInt> {
@@ -1741,6 +1750,7 @@ public inline fun UIntArray.dropLastWhile(predicate: (UInt) -> Boolean): List<UI
  * @sample samples.collections.Collections.Transformations.drop
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.dropLastWhile(predicate: (ULong) -> Boolean): List<ULong> {
@@ -1758,6 +1768,7 @@ public inline fun ULongArray.dropLastWhile(predicate: (ULong) -> Boolean): List<
  * @sample samples.collections.Collections.Transformations.drop
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.dropLastWhile(predicate: (UByte) -> Boolean): List<UByte> {
@@ -1775,6 +1786,7 @@ public inline fun UByteArray.dropLastWhile(predicate: (UByte) -> Boolean): List<
  * @sample samples.collections.Collections.Transformations.drop
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.dropLastWhile(predicate: (UShort) -> Boolean): List<UShort> {
@@ -1792,6 +1804,7 @@ public inline fun UShortArray.dropLastWhile(predicate: (UShort) -> Boolean): Lis
  * @sample samples.collections.Collections.Transformations.drop
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.dropWhile(predicate: (UInt) -> Boolean): List<UInt> {
@@ -1813,6 +1826,7 @@ public inline fun UIntArray.dropWhile(predicate: (UInt) -> Boolean): List<UInt> 
  * @sample samples.collections.Collections.Transformations.drop
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.dropWhile(predicate: (ULong) -> Boolean): List<ULong> {
@@ -1834,6 +1848,7 @@ public inline fun ULongArray.dropWhile(predicate: (ULong) -> Boolean): List<ULon
  * @sample samples.collections.Collections.Transformations.drop
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.dropWhile(predicate: (UByte) -> Boolean): List<UByte> {
@@ -1855,6 +1870,7 @@ public inline fun UByteArray.dropWhile(predicate: (UByte) -> Boolean): List<UByt
  * @sample samples.collections.Collections.Transformations.drop
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.dropWhile(predicate: (UShort) -> Boolean): List<UShort> {
@@ -1876,6 +1892,7 @@ public inline fun UShortArray.dropWhile(predicate: (UShort) -> Boolean): List<US
  * @sample samples.collections.Collections.Filtering.filter
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.filter(predicate: (UInt) -> Boolean): List<UInt> {
@@ -1888,6 +1905,7 @@ public inline fun UIntArray.filter(predicate: (UInt) -> Boolean): List<UInt> {
  * @sample samples.collections.Collections.Filtering.filter
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.filter(predicate: (ULong) -> Boolean): List<ULong> {
@@ -1900,6 +1918,7 @@ public inline fun ULongArray.filter(predicate: (ULong) -> Boolean): List<ULong> 
  * @sample samples.collections.Collections.Filtering.filter
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.filter(predicate: (UByte) -> Boolean): List<UByte> {
@@ -1912,6 +1931,7 @@ public inline fun UByteArray.filter(predicate: (UByte) -> Boolean): List<UByte> 
  * @sample samples.collections.Collections.Filtering.filter
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.filter(predicate: (UShort) -> Boolean): List<UShort> {
@@ -1924,6 +1944,7 @@ public inline fun UShortArray.filter(predicate: (UShort) -> Boolean): List<UShor
  * and returns the result of predicate evaluation on the element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.filterIndexed(predicate: (index: Int, UInt) -> Boolean): List<UInt> {
@@ -1936,6 +1957,7 @@ public inline fun UIntArray.filterIndexed(predicate: (index: Int, UInt) -> Boole
  * and returns the result of predicate evaluation on the element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.filterIndexed(predicate: (index: Int, ULong) -> Boolean): List<ULong> {
@@ -1948,6 +1970,7 @@ public inline fun ULongArray.filterIndexed(predicate: (index: Int, ULong) -> Boo
  * and returns the result of predicate evaluation on the element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.filterIndexed(predicate: (index: Int, UByte) -> Boolean): List<UByte> {
@@ -1960,6 +1983,7 @@ public inline fun UByteArray.filterIndexed(predicate: (index: Int, UByte) -> Boo
  * and returns the result of predicate evaluation on the element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.filterIndexed(predicate: (index: Int, UShort) -> Boolean): List<UShort> {
@@ -1972,6 +1996,7 @@ public inline fun UShortArray.filterIndexed(predicate: (index: Int, UShort) -> B
  * and returns the result of predicate evaluation on the element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun <C : MutableCollection<in UInt>> UIntArray.filterIndexedTo(destination: C, predicate: (index: Int, UInt) -> Boolean): C {
@@ -1987,6 +2012,7 @@ public inline fun <C : MutableCollection<in UInt>> UIntArray.filterIndexedTo(des
  * and returns the result of predicate evaluation on the element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun <C : MutableCollection<in ULong>> ULongArray.filterIndexedTo(destination: C, predicate: (index: Int, ULong) -> Boolean): C {
@@ -2002,6 +2028,7 @@ public inline fun <C : MutableCollection<in ULong>> ULongArray.filterIndexedTo(d
  * and returns the result of predicate evaluation on the element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun <C : MutableCollection<in UByte>> UByteArray.filterIndexedTo(destination: C, predicate: (index: Int, UByte) -> Boolean): C {
@@ -2017,6 +2044,7 @@ public inline fun <C : MutableCollection<in UByte>> UByteArray.filterIndexedTo(d
  * and returns the result of predicate evaluation on the element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun <C : MutableCollection<in UShort>> UShortArray.filterIndexedTo(destination: C, predicate: (index: Int, UShort) -> Boolean): C {
@@ -2032,6 +2060,7 @@ public inline fun <C : MutableCollection<in UShort>> UShortArray.filterIndexedTo
  * @sample samples.collections.Collections.Filtering.filter
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.filterNot(predicate: (UInt) -> Boolean): List<UInt> {
@@ -2044,6 +2073,7 @@ public inline fun UIntArray.filterNot(predicate: (UInt) -> Boolean): List<UInt> 
  * @sample samples.collections.Collections.Filtering.filter
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.filterNot(predicate: (ULong) -> Boolean): List<ULong> {
@@ -2056,6 +2086,7 @@ public inline fun ULongArray.filterNot(predicate: (ULong) -> Boolean): List<ULon
  * @sample samples.collections.Collections.Filtering.filter
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.filterNot(predicate: (UByte) -> Boolean): List<UByte> {
@@ -2068,6 +2099,7 @@ public inline fun UByteArray.filterNot(predicate: (UByte) -> Boolean): List<UByt
  * @sample samples.collections.Collections.Filtering.filter
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.filterNot(predicate: (UShort) -> Boolean): List<UShort> {
@@ -2078,6 +2110,7 @@ public inline fun UShortArray.filterNot(predicate: (UShort) -> Boolean): List<US
  * Appends all elements not matching the given [predicate] to the given [destination].
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun <C : MutableCollection<in UInt>> UIntArray.filterNotTo(destination: C, predicate: (UInt) -> Boolean): C {
@@ -2089,6 +2122,7 @@ public inline fun <C : MutableCollection<in UInt>> UIntArray.filterNotTo(destina
  * Appends all elements not matching the given [predicate] to the given [destination].
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun <C : MutableCollection<in ULong>> ULongArray.filterNotTo(destination: C, predicate: (ULong) -> Boolean): C {
@@ -2100,6 +2134,7 @@ public inline fun <C : MutableCollection<in ULong>> ULongArray.filterNotTo(desti
  * Appends all elements not matching the given [predicate] to the given [destination].
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun <C : MutableCollection<in UByte>> UByteArray.filterNotTo(destination: C, predicate: (UByte) -> Boolean): C {
@@ -2111,6 +2146,7 @@ public inline fun <C : MutableCollection<in UByte>> UByteArray.filterNotTo(desti
  * Appends all elements not matching the given [predicate] to the given [destination].
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun <C : MutableCollection<in UShort>> UShortArray.filterNotTo(destination: C, predicate: (UShort) -> Boolean): C {
@@ -2122,6 +2158,7 @@ public inline fun <C : MutableCollection<in UShort>> UShortArray.filterNotTo(des
  * Appends all elements matching the given [predicate] to the given [destination].
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun <C : MutableCollection<in UInt>> UIntArray.filterTo(destination: C, predicate: (UInt) -> Boolean): C {
@@ -2133,6 +2170,7 @@ public inline fun <C : MutableCollection<in UInt>> UIntArray.filterTo(destinatio
  * Appends all elements matching the given [predicate] to the given [destination].
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun <C : MutableCollection<in ULong>> ULongArray.filterTo(destination: C, predicate: (ULong) -> Boolean): C {
@@ -2144,6 +2182,7 @@ public inline fun <C : MutableCollection<in ULong>> ULongArray.filterTo(destinat
  * Appends all elements matching the given [predicate] to the given [destination].
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun <C : MutableCollection<in UByte>> UByteArray.filterTo(destination: C, predicate: (UByte) -> Boolean): C {
@@ -2155,6 +2194,7 @@ public inline fun <C : MutableCollection<in UByte>> UByteArray.filterTo(destinat
  * Appends all elements matching the given [predicate] to the given [destination].
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun <C : MutableCollection<in UShort>> UShortArray.filterTo(destination: C, predicate: (UShort) -> Boolean): C {
@@ -2342,6 +2382,7 @@ public fun UShortArray.sliceArray(indices: IntRange): UShortArray {
  * @sample samples.collections.Collections.Transformations.take
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UIntArray.take(n: Int): List<UInt> {
     require(n >= 0) { "Requested element count $n is less than zero." }
@@ -2366,6 +2407,7 @@ public fun UIntArray.take(n: Int): List<UInt> {
  * @sample samples.collections.Collections.Transformations.take
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun ULongArray.take(n: Int): List<ULong> {
     require(n >= 0) { "Requested element count $n is less than zero." }
@@ -2390,6 +2432,7 @@ public fun ULongArray.take(n: Int): List<ULong> {
  * @sample samples.collections.Collections.Transformations.take
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UByteArray.take(n: Int): List<UByte> {
     require(n >= 0) { "Requested element count $n is less than zero." }
@@ -2414,6 +2457,7 @@ public fun UByteArray.take(n: Int): List<UByte> {
  * @sample samples.collections.Collections.Transformations.take
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UShortArray.take(n: Int): List<UShort> {
     require(n >= 0) { "Requested element count $n is less than zero." }
@@ -2438,6 +2482,7 @@ public fun UShortArray.take(n: Int): List<UShort> {
  * @sample samples.collections.Collections.Transformations.take
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UIntArray.takeLast(n: Int): List<UInt> {
     require(n >= 0) { "Requested element count $n is less than zero." }
@@ -2459,6 +2504,7 @@ public fun UIntArray.takeLast(n: Int): List<UInt> {
  * @sample samples.collections.Collections.Transformations.take
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun ULongArray.takeLast(n: Int): List<ULong> {
     require(n >= 0) { "Requested element count $n is less than zero." }
@@ -2480,6 +2526,7 @@ public fun ULongArray.takeLast(n: Int): List<ULong> {
  * @sample samples.collections.Collections.Transformations.take
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UByteArray.takeLast(n: Int): List<UByte> {
     require(n >= 0) { "Requested element count $n is less than zero." }
@@ -2501,6 +2548,7 @@ public fun UByteArray.takeLast(n: Int): List<UByte> {
  * @sample samples.collections.Collections.Transformations.take
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UShortArray.takeLast(n: Int): List<UShort> {
     require(n >= 0) { "Requested element count $n is less than zero." }
@@ -2520,6 +2568,7 @@ public fun UShortArray.takeLast(n: Int): List<UShort> {
  * @sample samples.collections.Collections.Transformations.take
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.takeLastWhile(predicate: (UInt) -> Boolean): List<UInt> {
@@ -2537,6 +2586,7 @@ public inline fun UIntArray.takeLastWhile(predicate: (UInt) -> Boolean): List<UI
  * @sample samples.collections.Collections.Transformations.take
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.takeLastWhile(predicate: (ULong) -> Boolean): List<ULong> {
@@ -2554,6 +2604,7 @@ public inline fun ULongArray.takeLastWhile(predicate: (ULong) -> Boolean): List<
  * @sample samples.collections.Collections.Transformations.take
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.takeLastWhile(predicate: (UByte) -> Boolean): List<UByte> {
@@ -2571,6 +2622,7 @@ public inline fun UByteArray.takeLastWhile(predicate: (UByte) -> Boolean): List<
  * @sample samples.collections.Collections.Transformations.take
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.takeLastWhile(predicate: (UShort) -> Boolean): List<UShort> {
@@ -2588,6 +2640,7 @@ public inline fun UShortArray.takeLastWhile(predicate: (UShort) -> Boolean): Lis
  * @sample samples.collections.Collections.Transformations.take
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.takeWhile(predicate: (UInt) -> Boolean): List<UInt> {
@@ -2606,6 +2659,7 @@ public inline fun UIntArray.takeWhile(predicate: (UInt) -> Boolean): List<UInt> 
  * @sample samples.collections.Collections.Transformations.take
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.takeWhile(predicate: (ULong) -> Boolean): List<ULong> {
@@ -2624,6 +2678,7 @@ public inline fun ULongArray.takeWhile(predicate: (ULong) -> Boolean): List<ULon
  * @sample samples.collections.Collections.Transformations.take
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.takeWhile(predicate: (UByte) -> Boolean): List<UByte> {
@@ -2642,6 +2697,7 @@ public inline fun UByteArray.takeWhile(predicate: (UByte) -> Boolean): List<UByt
  * @sample samples.collections.Collections.Transformations.take
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.takeWhile(predicate: (UShort) -> Boolean): List<UShort> {
