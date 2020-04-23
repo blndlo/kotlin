@@ -25,6 +25,7 @@ import kotlin.ranges.reversed
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun UIntArray.component1(): UInt {
@@ -38,6 +39,7 @@ public inline operator fun UIntArray.component1(): UInt {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun ULongArray.component1(): ULong {
@@ -51,6 +53,7 @@ public inline operator fun ULongArray.component1(): ULong {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun UByteArray.component1(): UByte {
@@ -64,6 +67,7 @@ public inline operator fun UByteArray.component1(): UByte {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun UShortArray.component1(): UShort {
@@ -77,6 +81,7 @@ public inline operator fun UShortArray.component1(): UShort {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun UIntArray.component2(): UInt {
@@ -90,6 +95,7 @@ public inline operator fun UIntArray.component2(): UInt {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun ULongArray.component2(): ULong {
@@ -103,6 +109,7 @@ public inline operator fun ULongArray.component2(): ULong {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun UByteArray.component2(): UByte {
@@ -116,6 +123,7 @@ public inline operator fun UByteArray.component2(): UByte {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun UShortArray.component2(): UShort {
@@ -129,6 +137,7 @@ public inline operator fun UShortArray.component2(): UShort {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun UIntArray.component3(): UInt {
@@ -142,6 +151,7 @@ public inline operator fun UIntArray.component3(): UInt {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun ULongArray.component3(): ULong {
@@ -155,6 +165,7 @@ public inline operator fun ULongArray.component3(): ULong {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun UByteArray.component3(): UByte {
@@ -168,6 +179,7 @@ public inline operator fun UByteArray.component3(): UByte {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun UShortArray.component3(): UShort {
@@ -181,6 +193,7 @@ public inline operator fun UShortArray.component3(): UShort {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun UIntArray.component4(): UInt {
@@ -194,6 +207,7 @@ public inline operator fun UIntArray.component4(): UInt {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun ULongArray.component4(): ULong {
@@ -207,6 +221,7 @@ public inline operator fun ULongArray.component4(): ULong {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun UByteArray.component4(): UByte {
@@ -220,6 +235,7 @@ public inline operator fun UByteArray.component4(): UByte {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun UShortArray.component4(): UShort {
@@ -233,6 +249,7 @@ public inline operator fun UShortArray.component4(): UShort {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun UIntArray.component5(): UInt {
@@ -246,6 +263,7 @@ public inline operator fun UIntArray.component5(): UInt {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun ULongArray.component5(): ULong {
@@ -259,6 +277,7 @@ public inline operator fun ULongArray.component5(): ULong {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun UByteArray.component5(): UByte {
@@ -272,6 +291,7 @@ public inline operator fun UByteArray.component5(): UByte {
  * where the behavior is unspecified.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline operator fun UShortArray.component5(): UShort {
@@ -284,6 +304,7 @@ public inline operator fun UShortArray.component5(): UShort {
  * @sample samples.collections.Collections.Elements.elementAt
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public expect fun UIntArray.elementAt(index: Int): UInt
 
@@ -293,6 +314,7 @@ public expect fun UIntArray.elementAt(index: Int): UInt
  * @sample samples.collections.Collections.Elements.elementAt
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public expect fun ULongArray.elementAt(index: Int): ULong
 
@@ -302,6 +324,7 @@ public expect fun ULongArray.elementAt(index: Int): ULong
  * @sample samples.collections.Collections.Elements.elementAt
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public expect fun UByteArray.elementAt(index: Int): UByte
 
@@ -311,6 +334,7 @@ public expect fun UByteArray.elementAt(index: Int): UByte
  * @sample samples.collections.Collections.Elements.elementAt
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public expect fun UShortArray.elementAt(index: Int): UShort
 
@@ -320,6 +344,7 @@ public expect fun UShortArray.elementAt(index: Int): UShort
  * @sample samples.collections.Collections.Elements.elementAtOrElse
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.elementAtOrElse(index: Int, defaultValue: (Int) -> UInt): UInt {
@@ -332,6 +357,7 @@ public inline fun UIntArray.elementAtOrElse(index: Int, defaultValue: (Int) -> U
  * @sample samples.collections.Collections.Elements.elementAtOrElse
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.elementAtOrElse(index: Int, defaultValue: (Int) -> ULong): ULong {
@@ -344,6 +370,7 @@ public inline fun ULongArray.elementAtOrElse(index: Int, defaultValue: (Int) -> 
  * @sample samples.collections.Collections.Elements.elementAtOrElse
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.elementAtOrElse(index: Int, defaultValue: (Int) -> UByte): UByte {
@@ -356,6 +383,7 @@ public inline fun UByteArray.elementAtOrElse(index: Int, defaultValue: (Int) -> 
  * @sample samples.collections.Collections.Elements.elementAtOrElse
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.elementAtOrElse(index: Int, defaultValue: (Int) -> UShort): UShort {
@@ -368,6 +396,7 @@ public inline fun UShortArray.elementAtOrElse(index: Int, defaultValue: (Int) ->
  * @sample samples.collections.Collections.Elements.elementAtOrNull
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.elementAtOrNull(index: Int): UInt? {
@@ -380,6 +409,7 @@ public inline fun UIntArray.elementAtOrNull(index: Int): UInt? {
  * @sample samples.collections.Collections.Elements.elementAtOrNull
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.elementAtOrNull(index: Int): ULong? {
@@ -392,6 +422,7 @@ public inline fun ULongArray.elementAtOrNull(index: Int): ULong? {
  * @sample samples.collections.Collections.Elements.elementAtOrNull
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.elementAtOrNull(index: Int): UByte? {
@@ -404,6 +435,7 @@ public inline fun UByteArray.elementAtOrNull(index: Int): UByte? {
  * @sample samples.collections.Collections.Elements.elementAtOrNull
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.elementAtOrNull(index: Int): UShort? {
@@ -495,6 +527,7 @@ public inline fun UShortArray.findLast(predicate: (UShort) -> Boolean): UShort? 
  * @throws [NoSuchElementException] if the array is empty.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.first(): UInt {
@@ -506,6 +539,7 @@ public inline fun UIntArray.first(): UInt {
  * @throws [NoSuchElementException] if the array is empty.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.first(): ULong {
@@ -517,6 +551,7 @@ public inline fun ULongArray.first(): ULong {
  * @throws [NoSuchElementException] if the array is empty.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.first(): UByte {
@@ -528,6 +563,7 @@ public inline fun UByteArray.first(): UByte {
  * @throws [NoSuchElementException] if the array is empty.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.first(): UShort {
@@ -586,6 +622,7 @@ public inline fun UShortArray.first(predicate: (UShort) -> Boolean): UShort {
  * Returns the first element, or `null` if the array is empty.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UIntArray.firstOrNull(): UInt? {
     return if (isEmpty()) null else this[0]
@@ -595,6 +632,7 @@ public fun UIntArray.firstOrNull(): UInt? {
  * Returns the first element, or `null` if the array is empty.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun ULongArray.firstOrNull(): ULong? {
     return if (isEmpty()) null else this[0]
@@ -604,6 +642,7 @@ public fun ULongArray.firstOrNull(): ULong? {
  * Returns the first element, or `null` if the array is empty.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UByteArray.firstOrNull(): UByte? {
     return if (isEmpty()) null else this[0]
@@ -613,6 +652,7 @@ public fun UByteArray.firstOrNull(): UByte? {
  * Returns the first element, or `null` if the array is empty.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UShortArray.firstOrNull(): UShort? {
     return if (isEmpty()) null else this[0]
@@ -666,6 +706,7 @@ public inline fun UShortArray.firstOrNull(predicate: (UShort) -> Boolean): UShor
  * Returns an element at the given [index] or the result of calling the [defaultValue] function if the [index] is out of bounds of this array.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.getOrElse(index: Int, defaultValue: (Int) -> UInt): UInt {
@@ -676,6 +717,7 @@ public inline fun UIntArray.getOrElse(index: Int, defaultValue: (Int) -> UInt): 
  * Returns an element at the given [index] or the result of calling the [defaultValue] function if the [index] is out of bounds of this array.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.getOrElse(index: Int, defaultValue: (Int) -> ULong): ULong {
@@ -686,6 +728,7 @@ public inline fun ULongArray.getOrElse(index: Int, defaultValue: (Int) -> ULong)
  * Returns an element at the given [index] or the result of calling the [defaultValue] function if the [index] is out of bounds of this array.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.getOrElse(index: Int, defaultValue: (Int) -> UByte): UByte {
@@ -696,6 +739,7 @@ public inline fun UByteArray.getOrElse(index: Int, defaultValue: (Int) -> UByte)
  * Returns an element at the given [index] or the result of calling the [defaultValue] function if the [index] is out of bounds of this array.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.getOrElse(index: Int, defaultValue: (Int) -> UShort): UShort {
@@ -706,6 +750,7 @@ public inline fun UShortArray.getOrElse(index: Int, defaultValue: (Int) -> UShor
  * Returns an element at the given [index] or `null` if the [index] is out of bounds of this array.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UIntArray.getOrNull(index: Int): UInt? {
     return if (index >= 0 && index <= lastIndex) get(index) else null
@@ -715,6 +760,7 @@ public fun UIntArray.getOrNull(index: Int): UInt? {
  * Returns an element at the given [index] or `null` if the [index] is out of bounds of this array.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun ULongArray.getOrNull(index: Int): ULong? {
     return if (index >= 0 && index <= lastIndex) get(index) else null
@@ -724,6 +770,7 @@ public fun ULongArray.getOrNull(index: Int): ULong? {
  * Returns an element at the given [index] or `null` if the [index] is out of bounds of this array.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UByteArray.getOrNull(index: Int): UByte? {
     return if (index >= 0 && index <= lastIndex) get(index) else null
@@ -733,6 +780,7 @@ public fun UByteArray.getOrNull(index: Int): UByte? {
  * Returns an element at the given [index] or `null` if the [index] is out of bounds of this array.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UShortArray.getOrNull(index: Int): UShort? {
     return if (index >= 0 && index <= lastIndex) get(index) else null
@@ -742,6 +790,7 @@ public fun UShortArray.getOrNull(index: Int): UShort? {
  * Returns first index of [element], or -1 if the array does not contain element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.indexOf(element: UInt): Int {
@@ -752,6 +801,7 @@ public inline fun UIntArray.indexOf(element: UInt): Int {
  * Returns first index of [element], or -1 if the array does not contain element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.indexOf(element: ULong): Int {
@@ -762,6 +812,7 @@ public inline fun ULongArray.indexOf(element: ULong): Int {
  * Returns first index of [element], or -1 if the array does not contain element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.indexOf(element: UByte): Int {
@@ -772,6 +823,7 @@ public inline fun UByteArray.indexOf(element: UByte): Int {
  * Returns first index of [element], or -1 if the array does not contain element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.indexOf(element: UShort): Int {
@@ -782,6 +834,7 @@ public inline fun UShortArray.indexOf(element: UShort): Int {
  * Returns index of the first element matching the given [predicate], or -1 if the array does not contain such element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.indexOfFirst(predicate: (UInt) -> Boolean): Int {
@@ -792,6 +845,7 @@ public inline fun UIntArray.indexOfFirst(predicate: (UInt) -> Boolean): Int {
  * Returns index of the first element matching the given [predicate], or -1 if the array does not contain such element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.indexOfFirst(predicate: (ULong) -> Boolean): Int {
@@ -802,6 +856,7 @@ public inline fun ULongArray.indexOfFirst(predicate: (ULong) -> Boolean): Int {
  * Returns index of the first element matching the given [predicate], or -1 if the array does not contain such element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.indexOfFirst(predicate: (UByte) -> Boolean): Int {
@@ -812,6 +867,7 @@ public inline fun UByteArray.indexOfFirst(predicate: (UByte) -> Boolean): Int {
  * Returns index of the first element matching the given [predicate], or -1 if the array does not contain such element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.indexOfFirst(predicate: (UShort) -> Boolean): Int {
@@ -822,6 +878,7 @@ public inline fun UShortArray.indexOfFirst(predicate: (UShort) -> Boolean): Int 
  * Returns index of the last element matching the given [predicate], or -1 if the array does not contain such element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.indexOfLast(predicate: (UInt) -> Boolean): Int {
@@ -832,6 +889,7 @@ public inline fun UIntArray.indexOfLast(predicate: (UInt) -> Boolean): Int {
  * Returns index of the last element matching the given [predicate], or -1 if the array does not contain such element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.indexOfLast(predicate: (ULong) -> Boolean): Int {
@@ -842,6 +900,7 @@ public inline fun ULongArray.indexOfLast(predicate: (ULong) -> Boolean): Int {
  * Returns index of the last element matching the given [predicate], or -1 if the array does not contain such element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.indexOfLast(predicate: (UByte) -> Boolean): Int {
@@ -852,6 +911,7 @@ public inline fun UByteArray.indexOfLast(predicate: (UByte) -> Boolean): Int {
  * Returns index of the last element matching the given [predicate], or -1 if the array does not contain such element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.indexOfLast(predicate: (UShort) -> Boolean): Int {
@@ -863,6 +923,7 @@ public inline fun UShortArray.indexOfLast(predicate: (UShort) -> Boolean): Int {
  * @throws [NoSuchElementException] if the array is empty.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.last(): UInt {
@@ -874,6 +935,7 @@ public inline fun UIntArray.last(): UInt {
  * @throws [NoSuchElementException] if the array is empty.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.last(): ULong {
@@ -885,6 +947,7 @@ public inline fun ULongArray.last(): ULong {
  * @throws [NoSuchElementException] if the array is empty.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.last(): UByte {
@@ -896,6 +959,7 @@ public inline fun UByteArray.last(): UByte {
  * @throws [NoSuchElementException] if the array is empty.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.last(): UShort {
@@ -966,6 +1030,7 @@ public inline fun UShortArray.last(predicate: (UShort) -> Boolean): UShort {
  * Returns last index of [element], or -1 if the array does not contain element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.lastIndexOf(element: UInt): Int {
@@ -976,6 +1041,7 @@ public inline fun UIntArray.lastIndexOf(element: UInt): Int {
  * Returns last index of [element], or -1 if the array does not contain element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.lastIndexOf(element: ULong): Int {
@@ -986,6 +1052,7 @@ public inline fun ULongArray.lastIndexOf(element: ULong): Int {
  * Returns last index of [element], or -1 if the array does not contain element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.lastIndexOf(element: UByte): Int {
@@ -996,6 +1063,7 @@ public inline fun UByteArray.lastIndexOf(element: UByte): Int {
  * Returns last index of [element], or -1 if the array does not contain element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.lastIndexOf(element: UShort): Int {
@@ -1006,6 +1074,7 @@ public inline fun UShortArray.lastIndexOf(element: UShort): Int {
  * Returns the last element, or `null` if the array is empty.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UIntArray.lastOrNull(): UInt? {
     return if (isEmpty()) null else this[size - 1]
@@ -1015,6 +1084,7 @@ public fun UIntArray.lastOrNull(): UInt? {
  * Returns the last element, or `null` if the array is empty.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun ULongArray.lastOrNull(): ULong? {
     return if (isEmpty()) null else this[size - 1]
@@ -1024,6 +1094,7 @@ public fun ULongArray.lastOrNull(): ULong? {
  * Returns the last element, or `null` if the array is empty.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UByteArray.lastOrNull(): UByte? {
     return if (isEmpty()) null else this[size - 1]
@@ -1033,6 +1104,7 @@ public fun UByteArray.lastOrNull(): UByte? {
  * Returns the last element, or `null` if the array is empty.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UShortArray.lastOrNull(): UShort? {
     return if (isEmpty()) null else this[size - 1]
@@ -1290,6 +1362,7 @@ public fun UShortArray.randomOrNull(random: Random): UShort? {
  * Returns the single element, or throws an exception if the array is empty or has more than one element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.single(): UInt {
@@ -1300,6 +1373,7 @@ public inline fun UIntArray.single(): UInt {
  * Returns the single element, or throws an exception if the array is empty or has more than one element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.single(): ULong {
@@ -1310,6 +1384,7 @@ public inline fun ULongArray.single(): ULong {
  * Returns the single element, or throws an exception if the array is empty or has more than one element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.single(): UByte {
@@ -1320,6 +1395,7 @@ public inline fun UByteArray.single(): UByte {
  * Returns the single element, or throws an exception if the array is empty or has more than one element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.single(): UShort {
@@ -1414,6 +1490,7 @@ public inline fun UShortArray.single(predicate: (UShort) -> Boolean): UShort {
  * Returns single element, or `null` if the array is empty or has more than one element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UIntArray.singleOrNull(): UInt? {
     return if (size == 1) this[0] else null
@@ -1423,6 +1500,7 @@ public fun UIntArray.singleOrNull(): UInt? {
  * Returns single element, or `null` if the array is empty or has more than one element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun ULongArray.singleOrNull(): ULong? {
     return if (size == 1) this[0] else null
@@ -1432,6 +1510,7 @@ public fun ULongArray.singleOrNull(): ULong? {
  * Returns single element, or `null` if the array is empty or has more than one element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UByteArray.singleOrNull(): UByte? {
     return if (size == 1) this[0] else null
@@ -1441,6 +1520,7 @@ public fun UByteArray.singleOrNull(): UByte? {
  * Returns single element, or `null` if the array is empty or has more than one element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 public fun UShortArray.singleOrNull(): UShort? {
     return if (size == 1) this[0] else null

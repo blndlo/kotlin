@@ -20,6 +20,7 @@ import kotlin.random.*
  *
  * The operation is _terminal_.
  */
+@CompileTimeCalculation
 public operator fun <@kotlin.internal.OnlyInputTypes T> Sequence<T>.contains(element: T): Boolean {
     return indexOf(element) >= 0
 }
@@ -42,6 +43,7 @@ public fun <T> Sequence<T>.elementAt(index: Int): T {
  * 
  * @sample samples.collections.Collections.Elements.elementAtOrElse
  */
+@CompileTimeCalculation
 public fun <T> Sequence<T>.elementAtOrElse(index: Int, defaultValue: (Int) -> T): T {
     if (index < 0)
         return defaultValue(index)
@@ -62,6 +64,7 @@ public fun <T> Sequence<T>.elementAtOrElse(index: Int, defaultValue: (Int) -> T)
  * 
  * @sample samples.collections.Collections.Elements.elementAtOrNull
  */
+@CompileTimeCalculation
 public fun <T> Sequence<T>.elementAtOrNull(index: Int): T? {
     if (index < 0)
         return null
@@ -101,6 +104,7 @@ public inline fun <T> Sequence<T>.findLast(predicate: (T) -> Boolean): T? {
  *
  * The operation is _terminal_.
  */
+@CompileTimeCalculation
 public fun <T> Sequence<T>.first(): T {
     val iterator = iterator()
     if (!iterator.hasNext())
@@ -124,6 +128,7 @@ public inline fun <T> Sequence<T>.first(predicate: (T) -> Boolean): T {
  *
  * The operation is _terminal_.
  */
+@CompileTimeCalculation
 public fun <T> Sequence<T>.firstOrNull(): T? {
     val iterator = iterator()
     if (!iterator.hasNext())
@@ -146,6 +151,7 @@ public inline fun <T> Sequence<T>.firstOrNull(predicate: (T) -> Boolean): T? {
  *
  * The operation is _terminal_.
  */
+@CompileTimeCalculation
 public fun <@kotlin.internal.OnlyInputTypes T> Sequence<T>.indexOf(element: T): Int {
     var index = 0
     for (item in this) {
@@ -162,6 +168,7 @@ public fun <@kotlin.internal.OnlyInputTypes T> Sequence<T>.indexOf(element: T): 
  *
  * The operation is _terminal_.
  */
+@CompileTimeCalculation
 public inline fun <T> Sequence<T>.indexOfFirst(predicate: (T) -> Boolean): Int {
     var index = 0
     for (item in this) {
@@ -178,6 +185,7 @@ public inline fun <T> Sequence<T>.indexOfFirst(predicate: (T) -> Boolean): Int {
  *
  * The operation is _terminal_.
  */
+@CompileTimeCalculation
 public inline fun <T> Sequence<T>.indexOfLast(predicate: (T) -> Boolean): Int {
     var lastIndex = -1
     var index = 0
@@ -196,6 +204,7 @@ public inline fun <T> Sequence<T>.indexOfLast(predicate: (T) -> Boolean): Int {
  *
  * The operation is _terminal_.
  */
+@CompileTimeCalculation
 public fun <T> Sequence<T>.last(): T {
     val iterator = iterator()
     if (!iterator.hasNext())
@@ -231,6 +240,7 @@ public inline fun <T> Sequence<T>.last(predicate: (T) -> Boolean): T {
  *
  * The operation is _terminal_.
  */
+@CompileTimeCalculation
 public fun <@kotlin.internal.OnlyInputTypes T> Sequence<T>.lastIndexOf(element: T): Int {
     var lastIndex = -1
     var index = 0
@@ -248,6 +258,7 @@ public fun <@kotlin.internal.OnlyInputTypes T> Sequence<T>.lastIndexOf(element: 
  *
  * The operation is _terminal_.
  */
+@CompileTimeCalculation
 public fun <T> Sequence<T>.lastOrNull(): T? {
     val iterator = iterator()
     if (!iterator.hasNext())
@@ -278,6 +289,7 @@ public inline fun <T> Sequence<T>.lastOrNull(predicate: (T) -> Boolean): T? {
  *
  * The operation is _terminal_.
  */
+@CompileTimeCalculation
 public fun <T> Sequence<T>.single(): T {
     val iterator = iterator()
     if (!iterator.hasNext())
@@ -313,6 +325,7 @@ public inline fun <T> Sequence<T>.single(predicate: (T) -> Boolean): T {
  *
  * The operation is _terminal_.
  */
+@CompileTimeCalculation
 public fun <T> Sequence<T>.singleOrNull(): T? {
     val iterator = iterator()
     if (!iterator.hasNext())

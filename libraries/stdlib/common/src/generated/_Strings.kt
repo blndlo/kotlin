@@ -20,6 +20,7 @@ import kotlin.random.*
  * 
  * @sample samples.collections.Collections.Elements.elementAt
  */
+@CompileTimeCalculation
 public expect fun CharSequence.elementAt(index: Int): Char
 
 /**
@@ -27,6 +28,7 @@ public expect fun CharSequence.elementAt(index: Int): Char
  * 
  * @sample samples.collections.Collections.Elements.elementAtOrElse
  */
+@CompileTimeCalculation
 @kotlin.internal.InlineOnly
 public inline fun CharSequence.elementAtOrElse(index: Int, defaultValue: (Int) -> Char): Char {
     return if (index >= 0 && index <= lastIndex) get(index) else defaultValue(index)
@@ -37,6 +39,7 @@ public inline fun CharSequence.elementAtOrElse(index: Int, defaultValue: (Int) -
  * 
  * @sample samples.collections.Collections.Elements.elementAtOrNull
  */
+@CompileTimeCalculation
 @kotlin.internal.InlineOnly
 public inline fun CharSequence.elementAtOrNull(index: Int): Char? {
     return this.getOrNull(index)
@@ -62,6 +65,7 @@ public inline fun CharSequence.findLast(predicate: (Char) -> Boolean): Char? {
  * Returns first character.
  * @throws [NoSuchElementException] if the char sequence is empty.
  */
+@CompileTimeCalculation
 public fun CharSequence.first(): Char {
     if (isEmpty())
         throw NoSuchElementException("Char sequence is empty.")
@@ -80,6 +84,7 @@ public inline fun CharSequence.first(predicate: (Char) -> Boolean): Char {
 /**
  * Returns the first character, or `null` if the char sequence is empty.
  */
+@CompileTimeCalculation
 public fun CharSequence.firstOrNull(): Char? {
     return if (isEmpty()) null else this[0]
 }
@@ -95,6 +100,7 @@ public inline fun CharSequence.firstOrNull(predicate: (Char) -> Boolean): Char? 
 /**
  * Returns a character at the given [index] or the result of calling the [defaultValue] function if the [index] is out of bounds of this char sequence.
  */
+@CompileTimeCalculation
 @kotlin.internal.InlineOnly
 public inline fun CharSequence.getOrElse(index: Int, defaultValue: (Int) -> Char): Char {
     return if (index >= 0 && index <= lastIndex) get(index) else defaultValue(index)
@@ -103,6 +109,7 @@ public inline fun CharSequence.getOrElse(index: Int, defaultValue: (Int) -> Char
 /**
  * Returns a character at the given [index] or `null` if the [index] is out of bounds of this char sequence.
  */
+@CompileTimeCalculation
 public fun CharSequence.getOrNull(index: Int): Char? {
     return if (index >= 0 && index <= lastIndex) get(index) else null
 }
@@ -110,6 +117,7 @@ public fun CharSequence.getOrNull(index: Int): Char? {
 /**
  * Returns index of the first character matching the given [predicate], or -1 if the char sequence does not contain such character.
  */
+@CompileTimeCalculation
 public inline fun CharSequence.indexOfFirst(predicate: (Char) -> Boolean): Int {
     for (index in indices) {
         if (predicate(this[index])) {
@@ -122,6 +130,7 @@ public inline fun CharSequence.indexOfFirst(predicate: (Char) -> Boolean): Int {
 /**
  * Returns index of the last character matching the given [predicate], or -1 if the char sequence does not contain such character.
  */
+@CompileTimeCalculation
 public inline fun CharSequence.indexOfLast(predicate: (Char) -> Boolean): Int {
     for (index in indices.reversed()) {
         if (predicate(this[index])) {
@@ -135,6 +144,7 @@ public inline fun CharSequence.indexOfLast(predicate: (Char) -> Boolean): Int {
  * Returns the last character.
  * @throws [NoSuchElementException] if the char sequence is empty.
  */
+@CompileTimeCalculation
 public fun CharSequence.last(): Char {
     if (isEmpty())
         throw NoSuchElementException("Char sequence is empty.")
@@ -156,6 +166,7 @@ public inline fun CharSequence.last(predicate: (Char) -> Boolean): Char {
 /**
  * Returns the last character, or `null` if the char sequence is empty.
  */
+@CompileTimeCalculation
 public fun CharSequence.lastOrNull(): Char? {
     return if (isEmpty()) null else this[length - 1]
 }
@@ -218,6 +229,7 @@ public fun CharSequence.randomOrNull(random: Random): Char? {
 /**
  * Returns the single character, or throws an exception if the char sequence is empty or has more than one character.
  */
+@CompileTimeCalculation
 public fun CharSequence.single(): Char {
     return when (length) {
         0 -> throw NoSuchElementException("Char sequence is empty.")
@@ -247,6 +259,7 @@ public inline fun CharSequence.single(predicate: (Char) -> Boolean): Char {
 /**
  * Returns single character, or `null` if the char sequence is empty or has more than one character.
  */
+@CompileTimeCalculation
 public fun CharSequence.singleOrNull(): Char? {
     return if (length == 1) this[0] else null
 }

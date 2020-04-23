@@ -45,10 +45,7 @@ object Elements : TemplateGroupBase() {
         }
         returns("Boolean")
 
-        // TODO remove after introducing constexpr modifier
-        specialFor(ArraysOfObjects, ArraysOfPrimitives) {
-            annotation("""@CompileTimeCalculation""")
-        }
+        annotation("""@CompileTimeCalculation""")
 
         body(Iterables) {
             """
@@ -78,10 +75,7 @@ object Elements : TemplateGroupBase() {
         }
         returns("Int")
 
-        // TODO remove after introducing constexpr modifier
-        specialFor(ArraysOfObjects, ArraysOfPrimitives) {
-            annotation("""@CompileTimeCalculation""")
-        }
+        annotation("""@CompileTimeCalculation""")
 
         body {
             """
@@ -139,6 +133,7 @@ object Elements : TemplateGroupBase() {
     } builder {
         doc { "Returns last index of [element], or -1 if the ${f.collection} does not contain element." }
         typeParam("@kotlin.internal.OnlyInputTypes T")
+        annotation("""@CompileTimeCalculation""")
         specialFor(Lists) {
             annotation("""@Suppress("EXTENSION_SHADOWED_BY_MEMBER") // false warning, extension takes precedence in some cases""")
         }
@@ -206,6 +201,7 @@ object Elements : TemplateGroupBase() {
         inline()
 
         doc { "Returns index of the first ${f.element} matching the given [predicate], or -1 if the ${f.collection} does not contain such ${f.element}." }
+        annotation("""@CompileTimeCalculation""")
         returns("Int")
         body {
             """
@@ -244,6 +240,7 @@ object Elements : TemplateGroupBase() {
         inline()
 
         doc { "Returns index of the last ${f.element} matching the given [predicate], or -1 if the ${f.collection} does not contain such ${f.element}." }
+        annotation("""@CompileTimeCalculation""")
         returns("Int")
         body {
             """
@@ -316,9 +313,11 @@ object Elements : TemplateGroupBase() {
 
         specialFor(CharSequences, ArraysOfObjects, ArraysOfPrimitives, ArraysOfUnsigned) {
             on(Platform.Common) {
+                annotation("""@CompileTimeCalculation""")
                 inline(Inline.No)
             }
             on(Platform.JS) {
+                on(Backend.IR) { annotation("""@CompileTimeCalculation""") }
                 inline(Inline.No)
 
                 val size = f.code.size
@@ -336,6 +335,7 @@ object Elements : TemplateGroupBase() {
         include(CharSequences, Lists, ArraysOfUnsigned)
     } builder {
         doc { "Returns ${f.element.prefixWithArticle()} at the given [index] or the result of calling the [defaultValue] function if the [index] is out of bounds of this ${f.collection}." }
+        annotation("""@CompileTimeCalculation""")
         sample("samples.collections.Collections.Elements.elementAtOrElse")
         returns("T")
         body {
@@ -382,6 +382,7 @@ object Elements : TemplateGroupBase() {
         include(CharSequences, Lists, ArraysOfObjects, ArraysOfPrimitives, ArraysOfUnsigned)
     } builder {
         doc { "Returns ${f.element.prefixWithArticle()} at the given [index] or the result of calling the [defaultValue] function if the [index] is out of bounds of this ${f.collection}." }
+        annotation("""@CompileTimeCalculation""")
         returns("T")
         inlineOnly()
         body {
@@ -396,6 +397,7 @@ object Elements : TemplateGroupBase() {
         include(CharSequences, Lists, ArraysOfUnsigned)
     } builder {
         doc { "Returns ${f.element.prefixWithArticle()} at the given [index] or `null` if the [index] is out of bounds of this ${f.collection}." }
+        annotation("""@CompileTimeCalculation""")
         sample("samples.collections.Collections.Elements.elementAtOrNull")
         returns("T?")
         body {
@@ -438,6 +440,7 @@ object Elements : TemplateGroupBase() {
         include(CharSequences, Lists, ArraysOfObjects, ArraysOfPrimitives, ArraysOfUnsigned)
     } builder {
         doc { "Returns ${f.element.prefixWithArticle()} at the given [index] or `null` if the [index] is out of bounds of this ${f.collection}." }
+        annotation("""@CompileTimeCalculation""")
         returns("T?")
         body {
             """
@@ -453,6 +456,7 @@ object Elements : TemplateGroupBase() {
         doc { """Returns first ${f.element}.
         @throws [NoSuchElementException] if the ${f.collection} is empty.
         """ }
+        annotation("""@CompileTimeCalculation""")
         returns("T")
         body {
             """
@@ -494,6 +498,7 @@ object Elements : TemplateGroupBase() {
         include(CharSequences, Lists, ArraysOfUnsigned)
     } builder {
         doc { "Returns the first ${f.element}, or `null` if the ${f.collection} is empty." }
+        annotation("""@CompileTimeCalculation""")
         returns("T?")
         body {
             """
@@ -581,6 +586,7 @@ object Elements : TemplateGroupBase() {
     } builder {
         doc { """Returns the last ${f.element}.
         @throws [NoSuchElementException] if the ${f.collection} is empty.""" }
+        annotation("""@CompileTimeCalculation""")
         returns("T")
         body {
             """
@@ -628,6 +634,7 @@ object Elements : TemplateGroupBase() {
         include(Lists, CharSequences, ArraysOfUnsigned)
     } builder {
         doc { "Returns the last ${f.element}, or `null` if the ${f.collection} is empty." }
+        annotation("""@CompileTimeCalculation""")
         returns("T?")
         body {
             """
@@ -773,6 +780,7 @@ object Elements : TemplateGroupBase() {
         include(Lists, CharSequences, ArraysOfUnsigned)
     } builder {
         doc { "Returns the single ${f.element}, or throws an exception if the ${f.collection} is empty or has more than one ${f.element}." }
+        annotation("""@CompileTimeCalculation""")
         returns("T")
         body {
             """
@@ -822,6 +830,7 @@ object Elements : TemplateGroupBase() {
         include(Lists, CharSequences, ArraysOfUnsigned)
     } builder {
         doc { "Returns single ${f.element}, or `null` if the ${f.collection} is empty or has more than one ${f.element}." }
+        annotation("""@CompileTimeCalculation""")
         returns("T?")
         body {
             """
@@ -1061,6 +1070,7 @@ object Elements : TemplateGroupBase() {
                 Throws an [IndexOutOfBoundsException] if $condition.
                 """
             }
+            annotation("""@CompileTimeCalculation""")
             specialFor(ArraysOfObjects, ArraysOfPrimitives, ArraysOfUnsigned) {
                 doc {
                     """
