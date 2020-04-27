@@ -5380,6 +5380,7 @@ public fun UShortArray.withIndex(): Iterable<IndexedValue<UShort>> {
  * @sample samples.collections.Collections.Aggregates.all
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.all(predicate: (UInt) -> Boolean): Boolean {
@@ -5393,6 +5394,7 @@ public inline fun UIntArray.all(predicate: (UInt) -> Boolean): Boolean {
  * @sample samples.collections.Collections.Aggregates.all
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.all(predicate: (ULong) -> Boolean): Boolean {
@@ -5406,6 +5408,7 @@ public inline fun ULongArray.all(predicate: (ULong) -> Boolean): Boolean {
  * @sample samples.collections.Collections.Aggregates.all
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.all(predicate: (UByte) -> Boolean): Boolean {
@@ -5419,6 +5422,7 @@ public inline fun UByteArray.all(predicate: (UByte) -> Boolean): Boolean {
  * @sample samples.collections.Collections.Aggregates.all
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.all(predicate: (UShort) -> Boolean): Boolean {
@@ -5432,6 +5436,7 @@ public inline fun UShortArray.all(predicate: (UShort) -> Boolean): Boolean {
  * @sample samples.collections.Collections.Aggregates.any
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.any(): Boolean {
@@ -5444,6 +5449,7 @@ public inline fun UIntArray.any(): Boolean {
  * @sample samples.collections.Collections.Aggregates.any
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.any(): Boolean {
@@ -5456,6 +5462,7 @@ public inline fun ULongArray.any(): Boolean {
  * @sample samples.collections.Collections.Aggregates.any
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.any(): Boolean {
@@ -5468,6 +5475,7 @@ public inline fun UByteArray.any(): Boolean {
  * @sample samples.collections.Collections.Aggregates.any
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.any(): Boolean {
@@ -5583,6 +5591,7 @@ public inline fun UShortArray.count(predicate: (UShort) -> Boolean): Int {
  * @param [operation] function that takes current accumulator value and an element, and calculates the next accumulator value.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun <R> UIntArray.fold(initial: R, operation: (acc: R, UInt) -> R): R {
@@ -5600,6 +5609,7 @@ public inline fun <R> UIntArray.fold(initial: R, operation: (acc: R, UInt) -> R)
  * @param [operation] function that takes current accumulator value and an element, and calculates the next accumulator value.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun <R> ULongArray.fold(initial: R, operation: (acc: R, ULong) -> R): R {
@@ -5617,6 +5627,7 @@ public inline fun <R> ULongArray.fold(initial: R, operation: (acc: R, ULong) -> 
  * @param [operation] function that takes current accumulator value and an element, and calculates the next accumulator value.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun <R> UByteArray.fold(initial: R, operation: (acc: R, UByte) -> R): R {
@@ -5634,6 +5645,7 @@ public inline fun <R> UByteArray.fold(initial: R, operation: (acc: R, UByte) -> 
  * @param [operation] function that takes current accumulator value and an element, and calculates the next accumulator value.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun <R> UShortArray.fold(initial: R, operation: (acc: R, UShort) -> R): R {
@@ -5890,6 +5902,7 @@ public inline fun <R> UShortArray.foldRightIndexed(initial: R, operation: (index
  * Performs the given [action] on each element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.forEach(action: (UInt) -> Unit): Unit {
@@ -5900,6 +5913,7 @@ public inline fun UIntArray.forEach(action: (UInt) -> Unit): Unit {
  * Performs the given [action] on each element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.forEach(action: (ULong) -> Unit): Unit {
@@ -5910,6 +5924,7 @@ public inline fun ULongArray.forEach(action: (ULong) -> Unit): Unit {
  * Performs the given [action] on each element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.forEach(action: (UByte) -> Unit): Unit {
@@ -5920,6 +5935,7 @@ public inline fun UByteArray.forEach(action: (UByte) -> Unit): Unit {
  * Performs the given [action] on each element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.forEach(action: (UShort) -> Unit): Unit {
@@ -5932,6 +5948,7 @@ public inline fun UShortArray.forEach(action: (UShort) -> Unit): Unit {
  * and performs the action on the element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.forEachIndexed(action: (index: Int, UInt) -> Unit): Unit {
@@ -5945,6 +5962,7 @@ public inline fun UIntArray.forEachIndexed(action: (index: Int, UInt) -> Unit): 
  * and performs the action on the element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.forEachIndexed(action: (index: Int, ULong) -> Unit): Unit {
@@ -5958,6 +5976,7 @@ public inline fun ULongArray.forEachIndexed(action: (index: Int, ULong) -> Unit)
  * and performs the action on the element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.forEachIndexed(action: (index: Int, UByte) -> Unit): Unit {
@@ -5971,6 +5990,7 @@ public inline fun UByteArray.forEachIndexed(action: (index: Int, UByte) -> Unit)
  * and performs the action on the element.
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.forEachIndexed(action: (index: Int, UShort) -> Unit): Unit {
@@ -8008,6 +8028,7 @@ public fun UShortArray.minWithOrNull(comparator: Comparator<in UShort>): UShort?
  * @sample samples.collections.Collections.Aggregates.none
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.none(): Boolean {
@@ -8020,6 +8041,7 @@ public inline fun UIntArray.none(): Boolean {
  * @sample samples.collections.Collections.Aggregates.none
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.none(): Boolean {
@@ -8032,6 +8054,7 @@ public inline fun ULongArray.none(): Boolean {
  * @sample samples.collections.Collections.Aggregates.none
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.none(): Boolean {
@@ -8044,6 +8067,7 @@ public inline fun UByteArray.none(): Boolean {
  * @sample samples.collections.Collections.Aggregates.none
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.none(): Boolean {
@@ -8207,6 +8231,7 @@ public inline fun UShortArray.onEachIndexed(action: (index: Int, UShort) -> Unit
  * @sample samples.collections.Collections.Aggregates.reduce
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UIntArray.reduce(operation: (acc: UInt, UInt) -> UInt): UInt {
@@ -8232,6 +8257,7 @@ public inline fun UIntArray.reduce(operation: (acc: UInt, UInt) -> UInt): UInt {
  * @sample samples.collections.Collections.Aggregates.reduce
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun ULongArray.reduce(operation: (acc: ULong, ULong) -> ULong): ULong {
@@ -8257,6 +8283,7 @@ public inline fun ULongArray.reduce(operation: (acc: ULong, ULong) -> ULong): UL
  * @sample samples.collections.Collections.Aggregates.reduce
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UByteArray.reduce(operation: (acc: UByte, UByte) -> UByte): UByte {
@@ -8282,6 +8309,7 @@ public inline fun UByteArray.reduce(operation: (acc: UByte, UByte) -> UByte): UB
  * @sample samples.collections.Collections.Aggregates.reduce
  */
 @SinceKotlin("1.3")
+@CompileTimeCalculation
 @ExperimentalUnsignedTypes
 @kotlin.internal.InlineOnly
 public inline fun UShortArray.reduce(operation: (acc: UShort, UShort) -> UShort): UShort {
