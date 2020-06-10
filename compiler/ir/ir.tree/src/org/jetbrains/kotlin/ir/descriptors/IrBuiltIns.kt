@@ -136,7 +136,7 @@ class IrBuiltIns(
         }
 
         return symbolTable.declareSimpleFunctionIfNotExists(operatorDescriptor) {
-            val operator = IrBuiltInOperator(it, name, returnIrType)
+            val operator = IrBuiltInOperator(it, name, returnIrType, true)
             operator.parent = packageFragment
             packageFragment.declarations += operator
 
