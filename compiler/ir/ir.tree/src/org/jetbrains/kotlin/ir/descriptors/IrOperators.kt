@@ -54,7 +54,8 @@ private class NullValueDelegate<T> {
 class IrBuiltInOperator(
     override val symbol: IrSimpleFunctionSymbol,
     override val name: Name,
-    override var returnType: IrType
+    override var returnType: IrType,
+    val isCompileTime: Boolean = false
 ) :
     IrSimpleFunction,
     IrFunction,
