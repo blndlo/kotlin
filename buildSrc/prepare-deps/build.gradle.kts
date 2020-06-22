@@ -180,6 +180,7 @@ val mergeSources by tasks.creating(Jar::class.java) {
     dependsOn(sources)
     isPreserveFileTimestamps = false
     isReproducibleFileOrder = true
+    isZip64 = findProperty("mergeSources.useZip64")?.toString()?.toBoolean() == true
     if (!kotlinBuildProperties.isTeamcityBuild) {
         from(provider { sources.map(::zipTree) })
     }
