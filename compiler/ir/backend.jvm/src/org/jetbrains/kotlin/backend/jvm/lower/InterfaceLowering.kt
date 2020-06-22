@@ -195,14 +195,8 @@ internal class InterfaceLowering(val context: JvmBackendContext) : IrElementTran
         }
     }
 
-    private fun createDefaultImpl(function: IrSimpleFunction, addDeprecation: Boolean = false): IrSimpleFunction =
-        context.declarationFactory.getDefaultImplsFunction(function).also { newFunction ->
-            if (addDeprecation && !newFunction.annotations.hasAnnotation(DeprecationResolver.JAVA_DEPRECATED)) {
-                context.createIrBuilder(function.symbol).run {
-                    newFunction.annotations += irCall(this@InterfaceLowering.context.ir.symbols.javaLangDeprecatedConstructor)
-                }
-            }
-
+    private fun createDefaultImpl(function: IrSimpleFunction, isCompatibility: Boolean = false): IrSimpleFunction =
+        context.declarationFactory.getDefaultImplsFunction(function, isCompatibility).also { newFunction ->
             newFunction.parentAsClass.declarations.add(newFunction)
         }
 

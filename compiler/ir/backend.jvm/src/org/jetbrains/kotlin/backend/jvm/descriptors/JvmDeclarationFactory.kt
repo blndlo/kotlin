@@ -7,6 +7,8 @@ package org.jetbrains.kotlin.backend.jvm.descriptors
 
 import org.jetbrains.kotlin.backend.common.DescriptorsToIrRemapper
 import org.jetbrains.kotlin.backend.common.ir.*
+import org.jetbrains.kotlin.backend.common.lower.createIrBuilder
+import org.jetbrains.kotlin.backend.jvm.JvmBackendContext
 import org.jetbrains.kotlin.backend.jvm.JvmLoweredDeclarationOrigin
 import org.jetbrains.kotlin.backend.jvm.codegen.MethodSignatureMapper
 import org.jetbrains.kotlin.backend.jvm.codegen.isJvmInterface
@@ -21,6 +23,7 @@ import org.jetbrains.kotlin.descriptors.Modality
 import org.jetbrains.kotlin.descriptors.Visibilities
 import org.jetbrains.kotlin.ir.UNDEFINED_OFFSET
 import org.jetbrains.kotlin.ir.builders.declarations.buildField
+import org.jetbrains.kotlin.ir.builders.irCall
 import org.jetbrains.kotlin.ir.builders.setSourceRange
 import org.jetbrains.kotlin.ir.declarations.*
 import org.jetbrains.kotlin.ir.declarations.impl.IrClassImpl
@@ -39,9 +42,11 @@ import org.jetbrains.kotlin.ir.util.*
 import org.jetbrains.kotlin.load.java.JavaVisibilities
 import org.jetbrains.kotlin.load.java.JvmAbi
 import org.jetbrains.kotlin.name.Name
+import org.jetbrains.kotlin.resolve.deprecation.DeprecationResolver
 import java.util.*
 
 class JvmDeclarationFactory(
+    private val context: JvmBackendContext,
     private val methodSignatureMapper: MethodSignatureMapper,
     private val languageVersionSettings: LanguageVersionSettings
 ) : DeclarationFactory {
@@ -216,9 +221,10 @@ class JvmDeclarationFactory(
         }
     }
 
-    fun getDefaultImplsFunction(interfaceFun: IrSimpleFunction): IrSimpleFunction {
+    fun getDefaultImplsFunction(interfaceFun: IrSimpleFunction, forCompatibilityMode: Boolean = false): IrSimpleFunction {
         val parent = interfaceFun.parentAsClass
         assert(parent.isJvmInterface) { "Parent of ${interfaceFun.dump()} should be interface" }
+        assert(!forCompatibilityMode || !defaultImplsMethods.containsKey(interfaceFun)) { "DefaultImpls stub in compatibility mode should be requested only once from interface lowering: ${interfaceFun.dump()}" }
         return defaultImplsMethods.getOrPut(interfaceFun) {
             val defaultImpls = getDefaultImplsClass(interfaceFun.parentAsClass)
 
@@ -235,7 +241,8 @@ class JvmDeclarationFactory(
                 // is supposed to allow using `I2.DefaultImpls.f` as if it was inherited from `I1.DefaultImpls`.
                 // The classes are not actually related and `I2.DefaultImpls.f` is not a fake override but a bridge.
                 origin = when {
-                    interfaceFun.resolveFakeOverride()!!.origin.isSynthetic -> JvmLoweredDeclarationOrigin.DEFAULT_IMPLS_BRIDGE_TO_SYNTHETIC
+                    forCompatibilityMode -> JvmLoweredDeclarationOrigin.DEFAULT_IMPLS_BRIDGE_FOR_COMPATIBILITY
+                    !interfaceFun.isFakeOverride -> interfaceFun.origin
                     else -> JvmLoweredDeclarationOrigin.DEFAULT_IMPLS_BRIDGE
                 },
                 // Old backend doesn't generate ACC_FINAL on DefaultImpls methods.
@@ -248,7 +255,13 @@ class JvmDeclarationFactory(
 
                 isFakeOverride = false,
                 typeParametersFromContext = parent.typeParameters
-            )
+            ).also {
+                if (forCompatibilityMode && !it.annotations.hasAnnotation(DeprecationResolver.JAVA_DEPRECATED)) {
+                    context.createIrBuilder(it.symbol).run {
+                        it.annotations += irCall(this@JvmDeclarationFactory.context.ir.symbols.javaLangDeprecatedConstructor)
+                    }
+                }
+            }
         }
     }
 
