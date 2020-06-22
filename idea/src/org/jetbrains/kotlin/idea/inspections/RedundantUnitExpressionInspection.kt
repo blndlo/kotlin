@@ -15,7 +15,6 @@ import org.jetbrains.kotlin.idea.caches.resolve.resolveToCall
 import org.jetbrains.kotlin.idea.intentions.loopToCallChain.previousStatement
 import org.jetbrains.kotlin.js.descriptorUtils.nameIfStandardType
 import org.jetbrains.kotlin.psi.*
-import org.jetbrains.kotlin.psi.psiUtil.getParentOfType
 import org.jetbrains.kotlin.psi.psiUtil.getParentOfTypesAndPredicate
 import org.jetbrains.kotlin.psi.psiUtil.getStrictParentOfType
 import org.jetbrains.kotlin.psi.psiUtil.lastBlockStatementOrThis
@@ -48,9 +47,6 @@ class RedundantUnitExpressionInspection : AbstractKotlinInspection(), CleanupLoc
             }
 
             if (parent is KtBlockExpression) {
-                // Do not report just 'Unit' in function literals (return@label Unit is OK even in literals)
-                if (parent.getParentOfType<KtFunctionLiteral>(strict = true) != null) return false
-
                 if (referenceExpression == parent.lastBlockStatementOrThis()) {
                     val prev = referenceExpression.previousStatement() ?: return true
                     if (prev.isUnitLiteral()) return true
@@ -58,6 +54,7 @@ class RedundantUnitExpressionInspection : AbstractKotlinInspection(), CleanupLoc
                     if (prevType != null) {
                         return prevType.isUnit()
                     }
+
                     if (prev !is KtDeclaration) return false
                     if (prev !is KtFunction) return true
                     return parent.getParentOfTypesAndPredicate(
