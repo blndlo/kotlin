@@ -135,6 +135,11 @@ public class InlineTestGenerated extends AbstractInlineTest {
             runTest("idea/testData/refactoring/inline/function/UnitReturnType2.kt");
         }
 
+        @TestMetadata("UnitReturnType3.kt")
+        public void testUnitReturnType3() throws Exception {
+            runTest("idea/testData/refactoring/inline/function/UnitReturnType3.kt");
+        }
+
         @TestMetadata("idea/testData/refactoring/inline/function/expressionBody")
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
